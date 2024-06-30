@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>text matcher</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: black;
+        }
+
+        .app-container {
+            height: 100vh;
+            width: 100vw;
+            background-image: url(/wallpaperflare.com_wallpaper\ \(3\).jpg);
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .text {
+            color: aliceblue;
+        }
+
+        .input-box {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #003366;
+            border-radius: 20px 2px;
+            margin-bottom: 30px;
+            width: 300px;
+            background-color: rgba(255, 255, 255, 0.7);
+            color: #003366;
+            box-sizing: border-box;
+            box-shadow: cyan 2px 1px 5px;
+            transition: 0.5s ease-in;
+            height: 200px;
+            width: 200px;
+        }
+        .input-box:hover{
+            background-color: white;
+        }
+        .hey{
+            text-decoration: none;
+            background-color: #2B86C5;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-bottom: 60px;
+            transition: 0.5s ease-in;
+        }
+        .para{
+            font-size: 16px;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app-container">
+        <a href="index.html" class="hey">Calculate</a>
+        <h1 class="text">Text Matcher</h1>
+        <div class="matcher">
+            <input type="text" class="input-box" placeholder="Enter text" id="input-text1" onkeyup="mfun()">
+            <input type="text" class="input-box" placeholder="Enter text" id="input-text2" onkeyup="mfun()">
+        </div>
+        <p class="para" id="para"></p>
+    </div>
+    <script>
+        function mfun() {
+            let text1 = document.getElementById("input-text1")
+            let text2 = document.getElementById("input-text2")
+            let paragraph = document.getElementById("para")
+            if (text1.value == text2.value) {
+                paragraph.innerText = `Match !!`
+                paragraph.style.color=`green`
+            }
+            else {
+                paragraph.innerText = `Not match !!`
+                paragraph.style.color=`red`
+            }
+        }
+    </script>
+</body>
+
+</html>
